@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  # sso landing page
-  get "/"
-  post '/sso/login'
+  # sao landing page
+  #get "/"
+  #post '/sso/login'
 
   namespace :heroku do
     # sso sign in
