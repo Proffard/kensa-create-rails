@@ -30,6 +30,8 @@ gem "heroku-nav", "~> 0.2", :require => 'heroku/nav'
 gem 'thin'
 gem 'foreman'
 
+gem 'devise'
+
 group :development, :test do
   gem 'kensa'
   gem 'rspec-rails'

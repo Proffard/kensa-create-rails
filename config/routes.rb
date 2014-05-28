@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  # sao landing page
-  #get "/"
-  #post '/sso/login'
+  devise_for :resources, class_name: 'Heroku::Resource', path: "sso", path_names: { sign_in: 'login' }
+  get 'management/home'
+
+  # sso landing page
+  root to: "heroku/resources_controller#show"
+
 
   namespace :heroku do
-    # sso sign in
-    #get "/heroku/resources/:id"
     resources :resources
   end
 

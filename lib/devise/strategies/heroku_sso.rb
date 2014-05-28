@@ -1,29 +1,33 @@
-module Devise::Strategies
-  class HerokuSso < Authenticatable
-    def valid?
-      valid_token? && !token_expired?
-    end
+require 'devise/strategies/authenticatable'
 
-    def authenticate!
+module Devise
+  module Strategies
+    class HerokuSso < Authenticatable
+      def valid?
+        valid_token? && !token_expired?
+      end
 
-    end
+      def authenticate!
 
-    private
+      end
 
-    def pre_token
-      "#{params[:id]}:#{ENV['HEROKU_SSO_SALT']}:#{params[:timestamp]}"
-    end
+      private
 
-    def token
-      Digest::SHA1.hexdigest(pre_token).to_s
-    end
+      def pre_token
+        "#{params[:id]}:#{ENV['HEROKU_SSO_SALT']}:#{params[:timestamp]}"
+      end
 
-    def valid_token?
-      token == params[:token]
-    end
+      def token
+        Digest::SHA1.hexdigest(pre_token).to_s
+      end
 
-    def token_expired?
-      params[:timestamp].to_i < (Time.now - 2.minutes).to_i
+      def valid_token?
+        token == params[:token]
+      end
+
+      def token_expired?
+        params[:timestamp].to_i < (Time.now - 2.minutes).to_i
+      end
     end
   end
 end
