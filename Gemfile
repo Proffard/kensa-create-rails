@@ -36,6 +36,7 @@ group :development, :test do
   gem 'kensa'
   gem 'rspec-rails'
   gem 'quiet_assets'
+  gem 'pry'
 end
 
 group :test do
