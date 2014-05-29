@@ -14,7 +14,14 @@ module HerokuSso
     private
 
     def authentication_result_for resource
-      resource ? success!(resource) : fail!
+      resource ? success_authentication(resource) : fail!
+    end
+
+    def success_authentication resource
+      cookies['heroku-nav-data'] = { :value => params['nav-data'],
+                                     :path => '/' ,
+                                     :expires => 24.hours.from_now  }
+      success!(resource)
     end
 
     def id
