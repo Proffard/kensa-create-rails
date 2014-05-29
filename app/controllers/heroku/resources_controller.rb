@@ -20,16 +20,25 @@ class Heroku::ResourcesController < ApplicationController
 
   # plan change
   def update
-
+    resource = Heroku::Resource.find params[:id]
+    resource.update_attributes!(plan: update_plan) if resource
+    render json: {}
   end
 
   # deprovision
   def destroy
-
+    resource = Heroku::Resource.find params[:id]
+    resource.destroy if resource
+    render text: "ok"
   end
 
   private
+
   def provision_params
     params.require(:resource).permit(:heroku_id, :plan, :region, :options, :logplex_token)
+  end
+
+  def update_plan
+    params.require(:plan)
   end
 end
