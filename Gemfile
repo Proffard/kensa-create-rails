@@ -28,10 +28,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem "heroku-nav", "~> 0.2", :require => 'heroku/nav'
+gem 'devise'
+gem 'devise-heroku-sso', '0.0.3'
 gem 'thin'
 gem 'foreman'
 
-gem 'devise'
 
 group :development, :test do
   gem 'kensa'

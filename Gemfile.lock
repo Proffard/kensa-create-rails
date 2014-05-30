@@ -47,6 +47,8 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-heroku-sso (0.0.3)
+      devise
     diff-lcs (1.2.5)
     domain_name (0.5.13)
       unf (>= 0.0.5, < 1.0.0)
@@ -207,6 +209,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise
+  devise-heroku-sso (= 0.0.3)
   factory_girl_rails
   foreman
   heroku-nav (~> 0.2)
