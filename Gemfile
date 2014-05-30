@@ -29,7 +29,7 @@ gem 'spring',        group: :development
 
 gem "heroku-nav", "~> 0.2", :require => 'heroku/nav'
 gem 'devise'
-gem 'devise-heroku-sso', '0.0.3'
+gem 'devise-heroku-sso'
 gem 'thin'
 gem 'foreman'
 
