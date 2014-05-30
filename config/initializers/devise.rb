@@ -1,4 +1,3 @@
-puts '-----> ' + __FILE__
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -236,13 +235,6 @@ Devise.setup do |config|
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
   #
-  #require 'devise/strategies/heroku_sso'
-
-  #config.warden do |manager|
-    #manager.strategies.add(:heroku_sso, Devise::Strategies::HerokuSso)
-    #manager.intercept_401 = false
-    #manager.default_strategies(scope: 'Heroku::Resource').unshift :heroku_sso
-  #end
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
