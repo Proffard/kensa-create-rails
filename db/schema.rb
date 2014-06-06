@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140528153245) do
+ActiveRecord::Schema.define(version: 20140606144036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140528153245) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "callback_url"
   end
 
   add_index "heroku_resources", ["email"], name: "index_heroku_resources_on_email", unique: true, using: :btree
